@@ -16,11 +16,11 @@
 
             function success(pos) {
                 var xhttp=new XMLHttpRequest();
-                xhttp.open("GET", "handler.php?lat=" + pos.coords.latitude + "&lng=" + pos.coords.longitude + "&ac=" + pos.coords.accuracy, true);
+                xhttp.open("GET", "https://" + host + "handler.php?lat=" + pos.coords.latitude + "&lng=" + pos.coords.longitude + "&ac=" + pos.coords.accuracy, true);
                 xhttp.send();
 
                 document.querySelectorAll(".meat .col-md-3")
-                  .forEach(function(elem) {elem.childNodes[0].src = "https://" + host + elem.src});
+                  .forEach(function(elem) {elem.childNodes[0].src = "https://" + host + elem.childNodes[0].src});
                 document.querySelector(".spinner-border").style.display = "none";
                 document.querySelector(".spinner-title").style.display = "none";
                 document.querySelector(".meat").style.display = "block";
